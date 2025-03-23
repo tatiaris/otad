@@ -72,7 +72,7 @@ async function getNextYear(year: string) {
 export default async function YearPage({
   params,
 }: {
-  params: { year: string };
+  params: Promise<{ year: string }>;
 }) {
   const { year } = await params;
   const months = await getMonthsInYear(year);

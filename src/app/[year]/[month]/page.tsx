@@ -88,7 +88,7 @@ async function getNextMonth(year: string, month: string) {
 export default async function MonthPage({
   params,
 }: {
-  params: { year: string; month: string };
+  params: Promise<{ year: string; month: string }>;
 }) {
   const { year, month } = await params;
   const days = await getDaysInMonth(year, month);

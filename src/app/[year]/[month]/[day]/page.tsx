@@ -78,7 +78,7 @@ async function getNextDate(year: string, month: string, day: string) {
 export default async function DailyNewsPage({
   params,
 }: {
-  params: { year: string; month: string; day: string };
+  params: Promise<{ year: string; month: string; day: string }>;
 }) {
   const { year, month, day } = await params;
   const articleContent = await getArticleForDate(year, month, day);

@@ -1,8 +1,9 @@
 export const config = {
-  name: "Next Firebase Template",
-  description: "A Web development essentials starter kit built with Next, Firebase, Tailwind, and more.",
+  name: "One Thing A Day",
+  description: "Make the world a better place by doing one thing a day.",
+  title: "One Thing A Day",
   authors: [{ name: "Rishabh Tatia", url: "tatiaris.com" }],
-  domain: "next-firebase-template.vercel.app",
+  domain: "onethingaday.news",
   favicon: ["/favicon/favicon.ico", "/favicon/favicon-96x96.png", "/favicon/apple-touch-icon.png"],
-  keywords: ["Next.js", "Firebase", "Tailwind", "TypeScript", "Jest", "React", "Web Development", "Playwright"],
+  keywords: ["News", "Daily", "One Thing A Day", "World", "Better", "Place"],
 };

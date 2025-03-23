@@ -3,11 +3,20 @@ import { Metadata } from "next";
 import "src/global.css";
 
 export const metadata: Metadata = {
-  title: config.name,
+  title: config.title,
   description: config.description,
   authors: config.authors,
-  icons: config.favicon,
   keywords: config.keywords,
+  appleWebApp: {
+    title: config.name,
+  },
+  openGraph: {
+    title: config.title,
+    description: config.description,
+    type: "website",
+    siteName: config.name,
+    images: [`${process.env.NEXT_PUBLIC_HOST}/og?title=${config.name}&subtitle=${config.description}`],
+  }
 }
 
 /**
