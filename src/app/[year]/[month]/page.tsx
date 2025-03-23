@@ -125,7 +125,7 @@ export default async function MonthPage({
           {getMonthName(month)} {year}
         </h1>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           {days.length > 0 ? (
             days.map(day => {
               const date = new Date(`${year}-${month}-${day}`);

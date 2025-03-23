@@ -66,32 +66,34 @@ export default async function Home() {
     <div className="py-8 px-8">
       <div className="lg:max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-1">One Thing A Day</h1>
-        <h2 className="text-muted-foreground font-semibold mb-6">To make the world a better place.</h2>
-
-        <div className="space-y-4">
+        <h3 className="text-muted-foreground font-semibold mb-4">To make the world a better place.</h3>
+        <Link href="/today" className="text-blue-700 font-medium hover:underline">{`Today's article →`}</Link>
+        <h3 className="text-muted-foreground font-semibold mb-2 mt-4">Recent Articles</h3>
+        <div className="space-y-2">
           {articles.length > 0 ? (
-            articles.map(article => (
-              <Link key={article.path} href={article.path} className="block text-blue-700 font-medium hover:underline">
-                {article.date.toLocaleDateString('en-US', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </Link>
-            ))
+            <ul className="list-none pl-0 space-y-1">
+              {articles.slice(0, 3).map(article => (
+                <li key={article.path} className="flex items-center">
+                  <span className="mr-2 text-muted-foreground">-</span>
+                  <Link href={article.path} className="text-blue-700 hover:underline">
+                    {article.date.toLocaleDateString('en-US', {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           ) : (
             <p>No articles found</p>
           )}
         </div>
 
-        <div className="mt-8 flex space-x-4">
-          <Link href="/today" className="text-blue-600 hover:underline">
-            {`Go to today's news →`}
-          </Link>
-
+        <div className="mt-4 flex space-x-4">
           {articles.length > 0 && articles[0].year && (
-            <Link href={`/${articles[0].year}`} className="text-blue-600 hover:underline">
+            <Link href={`/${articles[0].year}`} className="text-blue-700 font-medium hover:underline">
               Browse archives →
             </Link>
           )}
