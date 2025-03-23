@@ -66,8 +66,8 @@ export default async function Home() {
     <div className="py-8 px-8">
       <div className="lg:max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-1">One Thing A Day</h1>
-        <h3 className="text-muted-foreground font-semibold mb-4">To make the world a better place.</h3>
-        <Link href="/today" className="text-blue-700 font-medium hover:underline">{`Today's article →`}</Link>
+        <span className="block text-muted-foreground font-semibold mb-4">To make the world a better place.</span>
+        <Link href="/today" className="text-primary font-semibold hover:underline">{`Today's article →`}</Link>
         <h3 className="text-muted-foreground font-semibold mb-2 mt-4">Recent Articles</h3>
         <div className="space-y-2">
           {articles.length > 0 ? (
@@ -75,7 +75,7 @@ export default async function Home() {
               {articles.slice(0, 3).map(article => (
                 <li key={article.path} className="flex items-center">
                   <span className="mr-2 text-muted-foreground">-</span>
-                  <Link href={article.path} className="text-blue-700 hover:underline">
+                  <Link href={article.path} className="text-primary hover:underline">
                     {article.date.toLocaleDateString('en-US', {
                       weekday: 'long',
                       year: 'numeric',
@@ -93,7 +93,7 @@ export default async function Home() {
 
         <div className="mt-4 flex space-x-4">
           {articles.length > 0 && articles[0].year && (
-            <Link href={`/${articles[0].year}`} className="text-blue-700 font-medium hover:underline">
+            <Link href={`/${articles[0].year}`} className="text-primary font-semibold hover:underline">
               Browse archives →
             </Link>
           )}
