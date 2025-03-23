@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ year: str
       description: description,
       type: "website",
       siteName: config.name,
-      images: [`${process.env.NEXT_PUBLIC_HOST}/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}`],
+      images: [`${process.env.NEXT_PUBLIC_HOST}/og?title=${encodeURIComponent(metadata.title || formattedDate)}&subtitle=${encodeURIComponent(description)}`],
     }
   };
 }
